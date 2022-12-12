@@ -18,15 +18,25 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans Pro", "Sans-Serif";
+  
+  /* display:flex; flex-direction:column; justify-content:center; */
+  /* min-height:100vh; */
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- body {
-  font-family: "Source Sans Pro", "Sans-Serif";
+ main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 5px;
+  width: 90%;
+  background-color: #f4f1ec;
  }
- /* body nav {
-  font-family: "Bungee", "Sans-Serif";
- } */
+
