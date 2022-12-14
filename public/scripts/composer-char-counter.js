@@ -5,13 +5,14 @@ $(document).ready(function() {
   const updateCount = function() {
     let maxChar = 140;
     let $charsEntered = $(this).val().length;
-    $(this).next().children().last().text(maxChar - $charsEntered);
+    let $counter = $(this).next().children().last();
+    $counter.text(maxChar - $charsEntered);
 
     //If the tweet character count hits negative numbers
     if ($charsEntered > maxChar) {
-      $(this).next().children().last().addClass('red-text');
+      $counter.addClass('red-text');
     } else {
-      $(this).next().children().last().removeClass('red-text');
+      $counter.removeClass('red-text');
     }
   };
 
