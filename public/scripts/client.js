@@ -3,36 +3,40 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function () {
+
+$(document).ready(function() {
+
   // Fake data taken from initial-tweets.json
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
+  // const data = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd"
+  //     },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ];
 
   //create a tweet box with contents from inputed data
   const createTweetElement = function(tweets) {
+    const format = window.timeago.format;
+    let createdAtStamp = format(tweets.created_at);
     const $newTweet = $(`
       <article class="tweet">
         <header>
@@ -48,7 +52,7 @@ $(document).ready(function () {
           <hr/>
         <footer>
           <div class="date">
-            <p> ${tweets.created_at}</p>
+            <p> ${createdAtStamp}</p>
           </div>
           <div class="emojis">
             <p>
@@ -75,7 +79,14 @@ $(document).ready(function () {
     }
   };
 
-  renderTweets(data);
+  // renderTweets(data);
+
+  const loadTweets = function() {
+    $.get('/tweets', (tweets) => {
+      renderTweets(tweets);
+    });
+  };
+  loadTweets();
 
   //AJAX POST Request
   const $form = $('.new-tweet form');
