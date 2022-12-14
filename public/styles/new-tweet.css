@@ -1,3 +1,7 @@
+.new-tweet {
+  margin-bottom: 30px;
+}
+
 form textarea {
   text-align: left;
   background-color: transparent;

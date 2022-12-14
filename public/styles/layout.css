@@ -40,3 +40,85 @@ body {
   background-color: #f4f1ec;
  }
 
+ .tweet {
+  margin: 20px;
+  border: 4px solid #545149;
+ }
+
+ .tweet:hover {
+  box-shadow: 5px 5px rgb(64, 86, 161, 0.25);
+ }
+
+ .tweet header {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  margin: 10px; 
+ }
+
+ .tweet header .header-left {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  font-family: "Source Sans Pro", "Sans-Serif";
+  font-weight: 300;
+ }
+
+ .tweet header .header-left img {
+  padding: 5px;
+  height: 70px;
+  padding-right: 10px;
+ }
+ 
+ .tweet header .header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  width: 40%;
+  padding-right: 20px; 
+  font-family: "Source Sans Pro", "Sans-Serif";
+  font-size: 1.1em;
+  font-weight: 600;
+  color: lightgray;
+ }
+
+ .tweet > p {  
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: "Source Sans Pro", "Sans-Serif";
+  font-weight: 600;
+  text-align: left;
+ }
+
+ hr {
+  width: 95%;
+  border-top: 3px solid; 
+  border-color: #545149;
+ }
+
+ .tweet footer {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  margin-left: 35px; 
+  margin-right: 35px; 
+  margin-top: 5px;
+  margin-bottom: 10px;
+ }
+
+ .tweet footer .date p {
+  font-family: "Source Sans Pro", "Sans-Serif";
+  font-weight: 600;
+  font-size: 17px;
+ }
+
+ .tweet footer .emojis p {
+  font-size: 17px;
+  color: #4056A1;
+  word-spacing: 5px;
+ }
+ 
+ .tweet footer .emojis i:hover{
+  color: goldenrod;
+ }
