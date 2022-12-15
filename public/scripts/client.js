@@ -6,22 +6,30 @@
 
 $(document).ready(function() {
 
+  //escape an xss attack function
+
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   //create a tweet box with contents from inputed data
   const createTweetElement = function(tweets) {
     const format = window.timeago.format;
-    let createdAtStamp = format(tweets.created_at);
+    let createdAtStamp = format(escape(tweets.created_at));
     const $newTweet = $(`
       <article class="tweet">
         <header>
           <div class="header-left">
-            <img src="${tweets.user.avatars}"/>
-            <p> ${tweets.user.name}</p>
+            <img src="${escape(tweets.user.avatars)}"/>
+            <p> ${escape(tweets.user.name)}</p>
           </div>
           <div class="header-right">
-            <p>${tweets.user.handle}</p>
+            <p>${escape(tweets.user.handle)}</p>
           </div>
         </header>
-            <p>${tweets.content.text} </p>
+            <p>${escape(tweets.content.text)} </p>
           <hr/>
         <footer>
           <div class="date">
@@ -44,6 +52,7 @@ $(document).ready(function() {
   //loop through tweets and calls the above function and appends to tweets container
   const $tweetContainer = $('#tweets-container');
   const renderTweets = function(tweets) {
+    $tweetContainer.empty();
     for (const tweet of tweets) {
       //create tweet
       const $newTweet = createTweetElement(tweet);
@@ -88,5 +97,7 @@ $(document).ready(function() {
     $.post('/tweets', data, (response) => {
       console.log('post response', response);
     });
+
+    loadTweets();
   });
 });
