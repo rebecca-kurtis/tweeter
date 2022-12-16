@@ -7,7 +7,6 @@
 $(document).ready(function() {
 
   //escape an xss attack function
-
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -61,14 +60,7 @@ $(document).ready(function() {
     }
   };
 
-  // renderTweets(data);
 
-  const loadTweets = function() {
-    $.get('/tweets', (tweets) => {
-      renderTweets(tweets);
-    });
-  };
-  loadTweets();
 
   //AJAX POST Request
   const $form = $('.new-tweet form');
@@ -78,26 +70,51 @@ $(document).ready(function() {
     //Validation checks
     let maxChar = 140;
     let $charsEntered = $('#tweet-text').val().length;
+    let $errMsg = $('#ErrMsg');
 
     if ($charsEntered > maxChar) {
-      window.alert('Your tweet is too long!');
+
+      $("#ErrMsg span").text("Your tweet is too long! You can only have a max of 140 characters.");
+      $errMsg.addClass('error-message');
+      $('.error-message').show();
+
+      setTimeout(() => {
+        $errMsg.removeClass('error-message');
+        $("#ErrMsg span").text('');
+      }, 5000);
       return;
     }
+
     if ($charsEntered === 0) {
-      window.alert('Your tweet is empty!');
+
+      $("#ErrMsg span").text("Your tweet is empty!");
+      $errMsg.addClass('error-message');
+      $('.error-message').show();
+
+      setTimeout(() => {
+        $errMsg.removeClass('error-message');
+        $("#ErrMsg span").text('');
+      }, 5000);
       return;
     }
 
     const data = $form.serialize();
-    console.log(data);
-    
-    //clear the text portion
+
+    $.post('/tweets', data)
+      .then(loadTweets);
+
+    //clear the text and counter portion
     $("#tweet-text").val('');
+    $(".counter").text(140);
 
-    $.post('/tweets', data, (response) => {
-      console.log('post response', response);
-    });
-
-    loadTweets();
   });
+
+  //function to load the tweets on the page
+  const loadTweets = function() {
+    $.get('/tweets', (tweets) => {
+      renderTweets(tweets);
+    });
+  };
+  loadTweets();
+
 });

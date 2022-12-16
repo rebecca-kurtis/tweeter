@@ -123,3 +123,19 @@ body {
  .tweet footer .emojis i:hover{
   color: goldenrod;
  }
+
+.error-message {
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid;
+  border-color: red;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: none;
+ }
+
+ .error-message span {
+  color: red;
+  text-align: left;
+  margin-left: 5%;
+ }
