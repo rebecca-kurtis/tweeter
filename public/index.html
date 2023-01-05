@@ -43,25 +43,28 @@
         <p>
           <b>Write</b> a new tweet
         </p>
-        <p>
+        <p class="emoji-arrow">
           <i class="fa-solid fa-angles-down" id="emoji"></i>
         </p>
       </div>
     </div>
   </nav>
 
-  <header class="user-header">
-    <div class="image">
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Rebecca Kurtis</h2>
-    </div>
-  </header>
-
   <!-- Page-specific (main) content here -->
   <main class="container">
+    <section class="user-header">
+      <div class="user-square">
+      <div class="image">
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div>
+        <h2>Rebecca Kurtis</h2>
+      </div>
+      </div>
+    </section>
+
+    <section class="main-container">
     <section class="new-tweet">
       <h2>Compose a Tweet</h2>
       <div id="ErrMsg">
@@ -77,6 +80,8 @@
     </section>
 
     <section id="tweets-container"></section>
+
+    </section>
 
   </main>
 </body>

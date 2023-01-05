@@ -27,8 +27,12 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+main {
+  flex-direction: column;
+}
 
- main {
+
+ .main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -138,4 +142,31 @@ body {
   color: red;
   text-align: left;
   margin-left: 5%;
+ }
+
+/* Desktop styling */
+ @media screen and (min-width: 1024px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 230px;
+  }
+  .user-header {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 5px;
+    margin-top: 10px;
+    margin-right: 100px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-container {
+    width: 65%;
+  }
+
  }
