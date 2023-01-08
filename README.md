@@ -22,6 +22,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
+Screenshot of Main Page with a viewpoint greater than 1024px:
 !["Screenshot of Main Page with a viewpoint greater than 1024px"](https://github.com/rebecca-kurtis/tweeter/blob/master/docs/Screenshot%202023-01-07%20at%205.50.27%20PM.png)
+
+Screenshot of Main Page with a viewpoint less than 1024px:
 !["Screenshot of Main Page with a viewpoint less than 1024px"](https://github.com/rebecca-kurtis/tweeter/blob/master/docs/Screenshot%202023-01-07%20at%205.50.39%20PM.png)
+
+Screenshot of error occuring when trying to submit an empty tweet:
 !["Screenshot of error occuring when trying to submit an empty tweet"](https://github.com/rebecca-kurtis/tweeter/blob/master/docs/Screenshot%202023-01-07%20at%205.51.31%20PM.png)
