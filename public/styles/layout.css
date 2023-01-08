@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -19,7 +20,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: "Source Sans Pro", "Sans-Serif";
-  
+
   /* display:flex; flex-direction:column; justify-content:center; */
   /* min-height:100vh; */
 }
@@ -27,12 +28,12 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main {
   flex-direction: column;
 }
 
-
- .main-container {
+.main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,91 +43,92 @@ main {
   padding: 5px;
   width: 90%;
   background-color: #f4f1ec;
- }
+}
 
- .tweet {
+.tweet {
   margin: 20px;
   border: 4px solid #545149;
- }
+}
 
- .tweet:hover {
+.tweet:hover {
   box-shadow: 5px 5px rgb(64, 86, 161, 0.25);
- }
+}
 
- .tweet header {
+.tweet header {
   display: flex;
   justify-content: space-between;
   height: 70px;
-  margin: 10px; 
- }
+  margin: 10px;
+}
 
- .tweet header .header-left {
+.tweet header .header-left {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 60%;
   font-family: "Source Sans Pro", "Sans-Serif";
   font-weight: 300;
- }
+}
 
- .tweet header .header-left img {
+.tweet header .header-left img {
   padding: 5px;
   height: 60px;
   padding-right: 10px;
- }
- 
- .tweet header .header-right {
+}
+
+.tweet header .header-right {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: right;
   width: 40%;
-  padding-right: 20px; 
+  padding-right: 20px;
   font-family: "Source Sans Pro", "Sans-Serif";
   font-size: 1em;
   font-weight: 600;
   color: lightgray;
- }
+}
 
- .tweet > p {  
+.tweet > p {
   margin-left: 3%;
   margin-right: 3%;
   font-family: "Source Sans Pro", "Sans-Serif";
   font-weight: 600;
   text-align: left;
- }
+  word-wrap: break-word;
+}
 
- hr {
+hr {
   width: 95%;
-  border-top: 3px solid; 
+  border-top: 3px solid;
   border-color: #545149;
- }
+}
 
- .tweet footer {
+.tweet footer {
   display: flex;
   justify-content: space-between;
   height: 40px;
-  margin-left: 35px; 
-  margin-right: 35px; 
+  margin-left: 35px;
+  margin-right: 35px;
   margin-top: 5px;
   margin-bottom: 10px;
- }
+}
 
- .tweet footer .date p {
+.tweet footer .date p {
   font-family: "Source Sans Pro", "Sans-Serif";
   font-weight: 600;
   font-size: 17px;
- }
+}
 
- .tweet footer .emojis p {
+.tweet footer .emojis p {
   font-size: 17px;
   color: #4056A1;
   word-spacing: 5px;
- }
- 
- .tweet footer .emojis i:hover{
+}
+
+.tweet footer .emojis i:hover {
   color: goldenrod;
- }
+}
 
 .error-message {
   width: 90%;
@@ -136,16 +138,16 @@ main {
   padding: 10px;
   margin-bottom: 10px;
   display: none;
- }
+}
 
- .error-message span {
+.error-message span {
   color: red;
   text-align: left;
   margin-left: 5%;
- }
+}
 
 /* Desktop styling */
- @media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   main {
     display: flex;
     flex-direction: row;
@@ -154,6 +156,7 @@ main {
     margin: 0 auto;
     padding-top: 230px;
   }
+
   .user-header {
     display: flex;
     flex-direction: column;
@@ -165,8 +168,9 @@ main {
     align-items: center;
     justify-content: center;
   }
+
   .main-container {
     width: 65%;
   }
 
- }
+}
